@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Форма зворотного зв'язку — напишіть мені повідомлення, оберіть тему та зручний спосіб контакту.">
+  <title>Контакти | Мій перший HTML-сайт</title>
+</head>
+<body>
+
+  <header>
+    <h1>Мій перший HTML-сайт</h1>
+    <nav>
+      <a href="../index.html">Головна</a> |
+      <a href="./about.html">Про мене</a> |
+      <a href="./contact.html">Контакти</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <h2>Контакти</h2>
+    <p>
+      Заповніть форму нижче, і я зв'яжуся з вами якомога швидше.
+      Поля, позначені <strong>*</strong>, є обов'язковими.
+    </p>
+
+    <form action="./submit.html" method="get">
+
+      <p>
+        <label for="name">Ім'я *:</label><br>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          minlength="2"
+          maxlength="50"
+          placeholder="Введіть ваше ім'я"
+        >
+      </p>
+
+      <p>
+        <label for="email">Email *:</label><br>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder="example@mail.com"
+        >
+      </p>
+
+      <p>
+        <label for="phone">Телефон (необов'язково):</label><br>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          pattern="[+]?[0-9\s\-]{7,15}"
+          placeholder="+38 050 123 45 67"
+        >
+      </p>
+
+      <p>
+        <label for="topic">Тема звернення:</label><br>
+        <select id="topic" name="topic">
+          <option value="">-- оберіть тему --</option>
+          <option value="study">Навчання</option>
+          <option value="work">Співпраця</option>
+          <option value="question">Запитання</option>
+          <option value="other">Інше</option>
+        </select>
+      </p>
+
+      <fieldset>
+        <legend>Зручний спосіб зв'язку</legend>
+        <label>
+          <input type="radio" name="contactWay" value="email" checked>
+          Email
+        </label>
+        <label>
+          <input type="radio" name="contactWay" value="phone">
+          Телефон
+        </label>
+        <label>
+          <input type="radio" name="contactWay" value="any">
+          Будь-який
+        </label>
+      </fieldset>
+
+      <p>
+        <label for="message">Повідомлення:</label><br>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          cols="40"
+          minlength="10"
+          maxlength="1000"
+          placeholder="Напишіть своє повідомлення..."
+        ></textarea>
+      </p>
+
+      <p>
+        <label>
+          <input type="checkbox" name="agree" required>
+          Погоджуюся з правилами
+        </label>
+      </p>
+
+      <button type="submit">Надіслати</button>
+
+    </form>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Адам Голота &mdash; група 232/1</p>
+  </footer>
+
+</body>
+</html>
