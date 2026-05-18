@@ -5,28 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Особистий навчальний сайт Адама Голоти — студента спеціальності Інженерія програмного забезпечення. Тут зібрані матеріали з вивчення веб-розробки.">
   <title>Мій перший HTML-сайт</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
   <script src="app.js" defer></script>
 </head>
 <body>
 
-  <header>
-    <h1>Мій перший HTML-сайт</h1>
-    <nav>
-      <a href="./index.html">Головна</a> |
-      <a href="./pages/about.html">Про мене</a> |
-      <a href="./pages/contact.html">Контакти</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="site-logo">Мій перший HTML-сайт</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="./index.html" class="active">Головна</a></li>
+          <li><a href="./pages/about.html">Про мене</a></li>
+          <li><a href="./pages/contact.html">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
 
-    <section>
+    <section class="card">
       <h2>Про цей проєкт</h2>
       <p>
-        Цей сайт створено в рамках практичної роботи №3 з дисципліни
+        Цей сайт створено в рамках практичної роботи №5 з дисципліни
         <strong>«Створення Web-сайтів (Front-end)»</strong>.
         Мета — засвоїти базову структуру HTML5-документа, семантичні елементи,
-        форми та медіа-контент.
+        форми та медіа-контент, а також оформити сайт засобами CSS.
       </p>
       <p>
         Веб-розробка — одна з <em>найзатребуваніших</em> сфер у сучасній IT-індустрії.
@@ -40,7 +46,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="card">
       <h2>Що я вивчаю</h2>
       <p>На першому курсі я активно опановую такі технології та інструменти:</p>
 
@@ -64,7 +70,7 @@
       </ol>
     </section>
 
-    <section>
+    <section class="card">
       <h2>Ілюстрація</h2>
       <figure>
         <img
@@ -77,9 +83,9 @@
       </figure>
     </section>
 
-    <section>
+    <section class="card">
       <h2>Розклад занять (приклад)</h2>
-      <table border="1">
+      <table class="schedule-table">
         <caption>Тижневий розклад пар — група 232/1</caption>
         <thead>
           <tr>
@@ -124,16 +130,18 @@
       </table>
     </section>
 
-    <section>
+    <section class="card">
       <h2>Натисни на кнопку</h2>
       <p>Невелика інтерактивність із JavaScript:</p>
-      <button type="button">Натисни мене!</button>
+      <button type="button" class="btn btn-accent">Натисни мене!</button>
     </section>
 
   </main>
 
-  <footer>
-    <p>&copy; 2026 Адам Голота &mdash; група 232/1</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Адам Голота &mdash; група 232/1</p>
+    </div>
   </footer>
 
 </body>
