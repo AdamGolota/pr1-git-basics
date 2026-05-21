@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM Events & HTTP Requests</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Список користувачів</h1>
+
+    <button id="btn-get-users">Get users</button>
+
+    <div id="loader" class="loader hidden">
+      <span class="spinner"></span>
+      <span>Loading...</span>
+    </div>
+
+    <div id="error" class="error hidden">Failed to load users.</div>
+
+    <div id="user-list" class="user-list"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
