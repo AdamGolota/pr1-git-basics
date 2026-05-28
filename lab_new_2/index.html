@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 2 — User Directory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>User Directory</h1>
+
+    <div class="controls">
+      <button id="btn-get-users">Get users</button>
+
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search by name, username, email, company or city..."
+        disabled
+      />
+
+      <select id="city-filter" disabled>
+        <option value="">All cities</option>
+      </select>
+
+      <select id="sort-select" disabled>
+        <option value="">Sort by...</option>
+        <option value="name">Name</option>
+        <option value="username">Username</option>
+        <option value="city">City</option>
+        <option value="company">Company</option>
+      </select>
+    </div>
+
+    <p id="status-message" class="status hidden"></p>
+
+    <div id="users-grid" class="users-grid"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

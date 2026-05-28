@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 3–4 — CRUD Users</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>User Manager</h1>
+
+    <!-- Notification -->
+    <div id="notification" class="notification hidden"></div>
+
+    <!-- Error -->
+    <div id="error-block" class="error-block hidden"></div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading hidden">Loading...</div>
+
+    <!-- Top bar: Get users + Search -->
+    <div class="top-bar">
+      <button id="btn-get-users">Get users</button>
+
+      <div class="search-group">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search users..."
+        />
+        <button id="btn-search">Search</button>
+      </div>
+    </div>
+
+    <!-- Create user form -->
+    <section class="form-section">
+      <h2>Create new user</h2>
+      <form id="create-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-firstName">First name</label>
+            <input type="text" id="f-firstName" placeholder="Ivan" required />
+          </div>
+          <div class="form-field">
+            <label for="f-lastName">Last name</label>
+            <input type="text" id="f-lastName" placeholder="Petrenko" required />
+          </div>
+          <div class="form-field">
+            <label for="f-age">Age</label>
+            <input type="number" id="f-age" placeholder="22" min="1" max="120" required />
+          </div>
+          <div class="form-field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" placeholder="ivan@example.com" required />
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">Create user</button>
+      </form>
+    </section>
+
+    <!-- Users list -->
+    <div id="users-list" class="users-list"></div>
+  </div>
+
+  <!-- Edit modal -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal">
+      <h2>Edit user</h2>
+      <form id="edit-form">
+        <input type="hidden" id="edit-id" />
+        <div class="form-field">
+          <label for="edit-firstName">First name</label>
+          <input type="text" id="edit-firstName" required />
+        </div>
+        <div class="form-field">
+          <label for="edit-lastName">Last name</label>
+          <input type="text" id="edit-lastName" required />
+        </div>
+        <div class="form-field">
+          <label for="edit-age">Age</label>
+          <input type="number" id="edit-age" min="1" max="120" required />
+        </div>
+        <div class="form-field">
+          <label for="edit-email">Email</label>
+          <input type="email" id="edit-email" required />
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-primary">Save</button>
+          <button type="button" id="btn-modal-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

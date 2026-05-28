@@ -1,0 +1,208 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a2e;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+#btn-get-users {
+  padding: 0.55rem 1.25rem;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+#btn-get-users:hover {
+  background: #4338ca;
+}
+
+#search-input {
+  flex: 1 1 220px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+#city-filter,
+#sort-select {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+#city-filter:focus,
+#sort-select:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+#city-filter:disabled,
+#sort-select:disabled,
+#search-input:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Status message */
+.status {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.status.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status.empty {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Users grid */
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Card */
+.user-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.user-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.user-card.favorited {
+  border: 2px solid #f59e0b;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.card-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.card-username {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.card-field {
+  font-size: 0.88rem;
+  color: #374151;
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.card-label {
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+/* Favorite button */
+.btn-favorite {
+  background: none;
+  border: none;
+  font-size: 1.35rem;
+  cursor: pointer;
+  line-height: 1;
+  color: #d1d5db;
+  transition: color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.btn-favorite:hover {
+  transform: scale(1.2);
+}
+
+.btn-favorite.active {
+  color: #f59e0b;
+}
+
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #btn-get-users {
+    width: 100%;
+  }
+}
